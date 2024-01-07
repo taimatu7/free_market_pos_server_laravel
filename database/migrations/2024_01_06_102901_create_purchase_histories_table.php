@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('store_id');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('product_id');
+            $table->integer('quantity');
             $table->boolean('returned')->default(false);
             $table->timestamps();
         });
