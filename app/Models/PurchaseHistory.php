@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $product_id
  * @property int $store_id
  * @property int $category_id
- * @property int $price
  * @property int $quantity
  * @property string $created_at
  * @property string $updated_at
