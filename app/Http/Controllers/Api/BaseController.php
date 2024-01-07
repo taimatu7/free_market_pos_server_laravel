@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Constants\Constants;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BaseController extends Controller
 {
-    private const SUCCESS = '1';
-    private const FAILURE = '0';
-
-    protected function successResponse($data, $code=200)
+    protected function successResponse($data, $code=Response::HTTP_OK)
     {
         return response()->json([
-            'status' => self::SUCCESS,
+            'status' => Constants::API_STATUS_SUCCESS,
             'data' => $data
         ], $code);
     }
@@ -22,7 +20,7 @@ class BaseController extends Controller
     protected function errorResponse($message, $code)
     {
         return response()->json([
-            'status' => self::FAILURE,
+            'status' => Constants::API_STATUS_FAILURE,
             'message' => $message,
             'code' => $code
         ], $code);
